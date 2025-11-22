@@ -20,6 +20,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Location Data Service
+builder.Services.AddSingleton<ElasticSearchDotNet.Api.Services.ILocationDataService, ElasticSearchDotNet.Api.Services.LocationDataService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
