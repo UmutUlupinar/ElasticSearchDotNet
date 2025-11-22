@@ -14,6 +14,9 @@ builder.Services.AddHttpClient("ApiClient", client =>
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
+// API Service registration
+builder.Services.AddScoped<ElasticSearchDotNet.Web.Services.IApiService, ElasticSearchDotNet.Web.Services.ApiService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
